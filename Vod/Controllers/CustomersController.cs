@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vod.Models;
 using System.Data.Entity;
+using Vod.ViewModels;
 
 namespace Vod.Controllers
 {
@@ -40,7 +41,13 @@ namespace Vod.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+
+            return View(viewModel);
         }
             
             
