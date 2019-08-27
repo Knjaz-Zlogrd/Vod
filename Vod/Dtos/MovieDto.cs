@@ -11,6 +11,8 @@ namespace Vod.Dtos
         [StringLength(255)]
         public string Name { get; set; }
 
+        public GenreDto Genre { get; set; }
+
         [Required]
         public byte GenreId { get; set; }
 
