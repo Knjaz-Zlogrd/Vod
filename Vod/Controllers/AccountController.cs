@@ -156,7 +156,8 @@ namespace Vod.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    IdentityCardNumber = model.IdentityCardNumber
+                    IdentityCardNumber = model.IdentityCardNumber,
+                    Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -377,7 +378,8 @@ namespace Vod.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    IdentityCardNumber = model.IdentityCardNumber
+                    IdentityCardNumber = model.IdentityCardNumber,
+                    Phone = model.Phone
                 };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)

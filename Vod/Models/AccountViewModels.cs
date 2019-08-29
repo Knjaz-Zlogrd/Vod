@@ -11,6 +11,9 @@ namespace Vod.Models
         [Required]
         [Display(Name = "Identity Card No")]
         public string IdentityCardNumber { get; set; }
+        [Required]
+        [Display(Name = "Phone No")]
+        public string Phone { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -70,6 +73,9 @@ namespace Vod.Models
         [Required]
         [Display(Name = "Identity Card No")]
         public string IdentityCardNumber { get; set; }
+        [Required]
+        [Display(Name = "Phone No")]
+        public string Phone { get; set; }
 
         [Required]
         [EmailAddress]

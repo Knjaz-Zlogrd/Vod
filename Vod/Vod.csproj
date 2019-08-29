@@ -247,6 +247,10 @@
     <Compile Include="Migrations\201908290002224_AddIdentityCardNumberToApplicationUser.Designer.cs">
       <DependentUpon>201908290002224_AddIdentityCardNumberToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908291911496_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\201908291911496_AddPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>201908291911496_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -560,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908290002224_AddIdentityCardNumberToApplicationUser.resx">
       <DependentUpon>201908290002224_AddIdentityCardNumberToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291911496_AddPhoneToApplicationUser.resx">
+      <DependentUpon>201908291911496_AddPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
