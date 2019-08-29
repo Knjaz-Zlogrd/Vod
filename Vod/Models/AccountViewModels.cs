@@ -8,6 +8,9 @@ namespace Vod.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        [Required]
+        [Display(Name = "Identity Card No")]
+        public string IdentityCardNumber { get; set; }
     }
 
     public class ExternalLoginListViewModel

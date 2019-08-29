@@ -54,9 +54,9 @@ namespace Vod
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "2325853820999484",
+               appSecret: "dbf9a46767b7b4d80e2e01e1170fa069");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
