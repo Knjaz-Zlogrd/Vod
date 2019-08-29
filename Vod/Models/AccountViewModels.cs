@@ -65,6 +65,10 @@ namespace Vod.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Identity Card No")]
+        public string IdentityCardNumber { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
