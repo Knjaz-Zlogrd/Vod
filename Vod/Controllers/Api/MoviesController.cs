@@ -19,7 +19,7 @@ namespace Vod.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-
+        
         public IHttpActionResult GetMovies()
         {
             var movieDtos = _context.Movies
@@ -29,7 +29,7 @@ namespace Vod.Controllers.Api
 
             return Ok(movieDtos);
         }
-
+        [Authorize(Roles = "CanManageMovies")]
         public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
@@ -41,6 +41,7 @@ namespace Vod.Controllers.Api
         }
 
         [HttpPost]
+        [Authorize(Roles = "CanManageMovies")]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -56,6 +57,7 @@ namespace Vod.Controllers.Api
         }
 
         [HttpPut]
+        [Authorize(Roles = "CanManageMovies")]
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -74,6 +76,7 @@ namespace Vod.Controllers.Api
         }
 
         [HttpDelete]
+        [Authorize(Roles = "CanManageMovies")]
         public IHttpActionResult DeleteMovie(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(c => c.Id == id);
