@@ -25,6 +25,8 @@ namespace Vod.Models
         [Range(1, 20)]
         public byte NumberInStock { get; set; }
 
+        public byte NumberAvailable { get; set; }
+
         [Required]
         [Display(Name = "Genre")]
         public byte GenreId { get; set; }

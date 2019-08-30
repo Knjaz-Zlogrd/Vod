@@ -48,6 +48,7 @@ namespace Vod.Controllers.Api
                 return BadRequest();
 
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+
             _context.Movies.Add(movie);
 
             _context.SaveChanges();
