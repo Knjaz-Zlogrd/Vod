@@ -19,16 +19,22 @@ namespace Vod.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
-        
-        public IHttpActionResult GetMovies()
+
+        public IHttpActionResult GetMovies(string query = null)
         {
-            var movieDtos = _context.Movies
-                .Include(m => m.Genre)
-                .ToList()
-                .Select(Mapper.Map<Movie, MovieDto>);
+            var moviesQuery = _context.Movies
+                .Include(c => c.Genre);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(c => c.Name.Contains(query));
+
+            var movieDtos = moviesQuery
+                 .ToList()
+                 .Select(Mapper.Map<Movie, MovieDto>);
 
             return Ok(movieDtos);
         }
+
         [Authorize(Roles = "CanManageMovies")]
         public IHttpActionResult GetMovie(int id)
         {
