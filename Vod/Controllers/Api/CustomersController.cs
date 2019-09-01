@@ -55,7 +55,9 @@ namespace Vod.Controllers.Api
                 return BadRequest();
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
+
             _context.Customers.Add(customer);
+
             _context.SaveChanges();
 
             customerDto.Id = customer.Id;

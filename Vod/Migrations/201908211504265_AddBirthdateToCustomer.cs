@@ -7,7 +7,7 @@ namespace Vod.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Customers", "Birthdate", c => c.DateTime());
+            AddColumn("dbo.Customers", "Birthdate", c => c.DateTime(nullable: false));
         }
         
         public override void Down()

@@ -40,22 +40,19 @@ namespace Vod.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new CustomerFormViewModel
-                {
-                    Customer = customer,
+                var viewModel = new CustomerFormViewModel(customer)
+                {                   
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
 
                 return View("CustomerForm", viewModel);
             }
 
-            if(customer.Id == 0)
+            if (customer.Id == 0)
                 _context.Customers.Add(customer);
-
             else
             {
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
-
                 customerInDb.Name = customer.Name;
                 customerInDb.Birthdate = customer.Birthdate;
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
@@ -88,9 +85,8 @@ namespace Vod.Controllers
             if (customer == null)
                 return HttpNotFound();
 
-            var viewModel = new CustomerFormViewModel()
+            var viewModel = new CustomerFormViewModel(customer)
             {
-                Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
 
